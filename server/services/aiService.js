@@ -5,8 +5,8 @@ export const getAISummary = async (text) => {
   if (!text || text.trim().length === 0) return "No content to summarize.";
 
   try {
-    const API_KEY = process.env.GEMINI_API_KEY; // or your framework's equivalent
-    const MODEL = "gemini-2.5-flash-lite"; // Faster and cheaper for summaries
+    const API_KEY = process.env.GEMINI_API_KEY;
+    const MODEL = "gemini-2.5-flash-lite";
     
     const response = await axios({
       method: "post",
@@ -19,7 +19,7 @@ export const getAISummary = async (text) => {
         ],
         generationConfig: {
           temperature: 0.3,
-          maxOutputTokens: 500, // Good practice to limit length
+          maxOutputTokens: 500, 
         }
       },
       headers: {
