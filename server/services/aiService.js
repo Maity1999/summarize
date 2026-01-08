@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const getAISummary = async (text) => {
-  // 1. Ensure text isn't empty to avoid API errors
+  // Ensuring text isn't empty to avoid API errors
   if (!text || text.trim().length === 0) return "No content to summarize.";
 
   try {
